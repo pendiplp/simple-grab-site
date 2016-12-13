@@ -4,6 +4,7 @@ const express = require('express')
 const app = express();
 
 app
+	.get('/restart', () => { process.exit() })
 	.get('/*', (req, res) => {
 		if (req.url == '/favicon.ico') return;
 
